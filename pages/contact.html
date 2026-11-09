@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1120">
+  <title>Contact · Khen Rod S. Canlas</title>
+  <meta name="description" content="Contact Khen Rod S. Canlas by email, GitHub, Facebook or Instagram, or use the contact form.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("js-anim");setTimeout(function(){if(!window.__animReady)document.documentElement.classList.remove("js-anim")},4000)}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <script src="../js/contact.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <script src="../js/data/skills.js" defer></script>
+  <script src="../js/data/projects.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+</head>
+<body id="top" data-page="contact" data-root="../">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="site-header">
+    <noscript><nav class="noscript-nav" aria-label="Primary"><a href="../index.html">Home</a><a href="../pages/about.html">About</a><a href="../index.html#expertise">Expertise</a><a href="../pages/projects.html">Projects</a><a href="../index.html#creative-works">Creative Works</a><a href="../pages/contact.html">Contact</a></nav></noscript>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero" aria-labelledby="page-title">
+      <div class="container container--wide">
+        <div class="page-hero__text page-hero__text--wide">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
+          <h1 id="page-title" class="h1 page-hero__title">Let's build something together.</h1>
+          <p class="lead">Whether it's a project, an opportunity or just a hello, I'd be glad to hear from you. Send a message below or reach me through any of the links.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt section--bordered" id="contact" aria-labelledby="contact-title">
+      <div class="container container--wide">
+        <div class="contact">
+          <div class="contact__intro">
+            <h2 id="contact-title" class="h3">Get in touch</h2>
+            <p class="text-muted">Email is the most direct way to reach me. You can also find me on GitHub, Facebook and Instagram.</p>
+
+            <!-- Rendered from js/contact.js (edit your details there) -->
+            <ul class="contact-links" role="list" aria-label="Ways to reach me" data-contact-links></ul>
+            <noscript>
+              <p class="text-soft">Email: <a href="mailto:khenrodc@gmail.com">khenrodc@gmail.com</a>. <a href="https://github.com/khenrodc-coder">GitHub</a>, <a href="https://www.facebook.com/khentarohohoho">Facebook</a>, <a href="https://www.instagram.com/khentaroo_/">Instagram</a>.</p>
+            </noscript>
+          </div>
+
+          <form class="contact-form card card--raised" data-contact-form novalidate
+                action="mailto:khenrodc@gmail.com" method="post" enctype="text/plain" aria-labelledby="form-title">
+            <h3 class="card__title" id="form-title">Send a message</h3>
+
+            <div class="field">
+              <label class="field__label" for="cf-name">Name</label>
+              <input class="field__control" id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-error">
+              <span class="field__error" id="cf-name-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-email">Email</label>
+              <input class="field__control" id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="cf-email-error">
+              <span class="field__error" id="cf-email-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-subject">Subject</label>
+              <input class="field__control" id="cf-subject" name="subject" type="text" autocomplete="off" required aria-describedby="cf-subject-error">
+              <span class="field__error" id="cf-subject-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-message">Message</label>
+              <textarea class="field__control" id="cf-message" name="message" rows="6" maxlength="1000" required aria-describedby="cf-message-hint cf-message-error"></textarea>
+              <span class="field__hint" id="cf-message-hint">Up to 1,000 characters.</span>
+              <span class="field__error" id="cf-message-error"></span>
+            </div>
+
+            <!-- Spam trap for when a form service is connected: real visitors never see this -->
+            <div class="hp" aria-hidden="true">
+              <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+
+            <div class="contact-form__actions">
+              <button class="btn btn--primary btn--lg" type="submit">
+                Send message
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+              <p class="field__hint" data-mode-note>This form opens your email app with your message ready to send. The website itself does not deliver messages.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

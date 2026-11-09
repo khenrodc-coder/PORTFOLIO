@@ -1,0 +1,87 @@
+/* ==========================================================================
+   responsive.css — Refinements for screen size and shape
+   --------------------------------------------------------------------------
+   style.css is mobile-first and holds the main breakpoints (30em, 40em, 48em,
+   64em). This file adds the cases a width-only approach misses:
+   large monitors, short screens (720p laptops, landscape phones) and
+   touch-target minimums. Load order: variables, style, responsive, animations.
+   ========================================================================== */
+
+/* ---------- 1. Touch targets: every control at least 44 x 44 ------------ */
+.site-footer__link { min-width: var(--tap-min); }
+.crumbs a { min-width: var(--tap-min); }
+.brand { min-width: var(--tap-min); }
+
+/* ---------- 2. Large monitors: scale the whole interface up ------------- */
+/* All sizes are in rem, so raising the root size grows type, spacing and
+   container widths together instead of leaving a small island of content. */
+@media (min-width: 100em) {   /* 1600px and up */
+  html { font-size: 112.5%; }
+}
+@media (min-width: 140em) {   /* 2240px and up */
+  html { font-size: 131.25%; }
+}
+
+/* ---------- 3. Short screens (720p laptops, small windows) -------------- */
+@media (min-width: 64em) and (max-height: 56em) {
+  .hero { padding-block: var(--space-6) var(--space-9); }
+  .hero__content { gap: var(--space-4); }
+  .hero__title { font-size: clamp(2.5rem, min(1.2rem + 5.2vw, 9.5vh), 4.5rem); }
+  .hero__lede { max-width: 40rem; }
+  .hero__facts { margin-top: var(--space-3); padding-top: var(--space-4); }
+  .hero__visual { max-width: 22rem; }
+  .hero__scroll-wrap { display: none; }   /* cue would overlap content on a short screen */
+}
+
+/* ---------- 4. Landscape phones: reclaim vertical space ----------------- */
+@media (max-height: 31.25em) and (orientation: landscape) {
+  :root { --nav-height: 3.5rem; }
+  .brand__mark { width: 2.25rem; height: 2.25rem; }
+  .hero { min-height: 0; padding-block: var(--space-6) var(--space-7); }
+  .hero__scroll-wrap { display: none; }
+  .section { padding-block: clamp(3rem, 2rem + 4vw, 5rem); }
+  .site-nav__link { padding-block: var(--space-3); font-size: var(--text-xl); }   /* menu fits and scrolls on a short screen */
+}
+
+/* ---------- 5. Mid-size tablets (landscape iPad and similar) ------------ */
+@media (min-width: 64em) and (max-width: 75em) {
+  .hero__inner { gap: var(--space-7); }
+  .hero__visual { max-width: 22rem; }
+  .site-nav__link, .site-nav__link:hover { padding-inline: 0.7rem; }
+  .site-nav__link::after { left: 0.7rem; right: 0.7rem; }
+  .site-menu { gap: var(--space-4); }
+}
+
+/* ---------- 6. Very small phones (320 to 360px) ------------------------- */
+@media (max-width: 22.5em) {
+  :root { --gutter: 1rem; }
+  .btn--lg { padding-inline: 1.4rem; }
+  .hero__actions .btn { width: 100%; }          /* full-width buttons are easier to hit */
+  .contact-form .btn { width: 100%; }
+}
+
+/* ---------- 7. Phones: content-level recomposition ---------------------- */
+@media (max-width: 47.99em) {
+  .site-footer .brand__name { display: inline; }        /* the header hides the name for space; the footer has room */
+  .creative__media--empty { aspect-ratio: 16 / 3; }     /* placeholder tiles stay slim instead of taking a whole screen */
+  .creative__item--placeholder .creative__body { padding: var(--space-4); }
+}
+
+/* ---------- 8. Tablet portrait (768 to 1023px): recompose, don't just shrink */
+@media (min-width: 48em) and (max-width: 63.99em) {
+  /* Hero: text and portrait side by side instead of a small portrait under a wide paragraph */
+  .hero__inner { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-6); align-items: start; }
+  .hero__visual { max-width: none; justify-self: stretch; }
+  .hero__lede { font-size: 1rem; }
+  .hero__facts { grid-template-columns: 1fr; gap: var(--space-4); }
+  .hero__frame > img { object-position: 50% 42%; }      /* window sits lower so the face clears the caption */
+  .hero__badge { left: var(--space-3); right: var(--space-3); bottom: var(--space-3); padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
+  .hero__badge .stat-label { display: none; }
+  /* Keep reading lines at a comfortable length on wide single-column cards */
+  .project__info, .pd__main { max-width: 46rem; }
+}
+
+/* ---------- 9. Small laptops (1024 to 1200px): avoid cramped card titles - */
+@media (min-width: 64em) and (max-width: 75em) {
+  .about__cards > .span-3 { grid-column: span 6; }
+}

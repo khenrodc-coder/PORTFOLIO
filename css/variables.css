@@ -1,0 +1,152 @@
+/* ==========================================================================
+   variables.css — Design tokens (single source of truth)
+   Brand palette is from the project brief. Anything marked "derived" was
+   added only to satisfy contrast (WCAG AA) or to give surfaces depth.
+   Load this file BEFORE style.css.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette (from brief) ------------------------------------- */
+  --navy-950: #0B1120;      /* Midnight Navy */
+  --charcoal-900: #15191F;  /* Charcoal */
+  --white-50: #F8FAFC;      /* Soft White */
+  --blue-500: #3B82F6;      /* Electric Blue */
+  --slate-500: #64748B;     /* Slate */
+  --silver-200: #DCE1E8;    /* Silver */
+
+  /* ---- Derived tints (contrast-driven) -------------------------------- */
+  --slate-400: #94A3B8;     /* muted text on dark: 7.3:1 on navy (brand slate is only 3.96:1) */
+  --blue-400: #60A5FA;      /* hover/links on dark: 7.4:1 on navy */
+  --blue-600: #2563EB;      /* accent on light surfaces: 4.9:1 on soft white */
+  --charcoal-800: #1B212B;  /* elevated surface above charcoal */
+  --error-400: #F87171;     /* functional: form errors */
+  --success-400: #4ADE80;   /* functional: form success */
+
+  /* ---- Semantic tokens: DARK (default) -------------------------------- */
+  --color-bg: var(--navy-950);
+  --color-surface: var(--charcoal-900);
+  --color-surface-raised: var(--charcoal-800);
+  --color-text: var(--white-50);
+  --color-text-soft: var(--silver-200);
+  --color-text-muted: var(--slate-400);
+  --color-border: rgba(220, 225, 232, 0.12);
+  --color-border-strong: rgba(220, 225, 232, 0.24);
+  --color-accent: var(--blue-500);
+  --color-accent-hover: var(--blue-400);
+  --color-on-accent: var(--navy-950);   /* navy on blue = 5.1:1 (white on blue is only 3.5:1) */
+  --color-link: var(--blue-400);
+  --color-focus: var(--blue-400);
+  --color-error: var(--error-400);
+  --color-success: var(--success-400);
+  --color-decor: var(--slate-500);      /* decorative only: borders, rules, large icons */
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-display: "Manrope", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-accent: "Space Grotesk", "Inter", system-ui, sans-serif;  /* eyebrows, labels, numerals */
+
+  --text-xs: 0.8125rem;   /* 13px: uppercase labels only */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px body */
+  --text-lg: clamp(1.125rem, 1.07rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.2vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.2vw, 3rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3.6vw, 4.25rem);
+  --text-display: clamp(2.5rem, 1.2rem + 6.6vw, 6.5rem);
+
+  --leading-display: 1.02;
+  --leading-heading: 1.15;
+  --leading-snug: 1.4;
+  --leading-body: 1.65;
+
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.02em;
+  --tracking-label: 0.14em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ---- Spacing scale (4px base) --------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-y: clamp(4.5rem, 3rem + 7vw, 9rem);  /* vertical rhythm between sections */
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --container-narrow: 46rem;   /* reading width */
+  --container-default: 72rem;
+  --container-wide: 82rem;
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 2.5rem);
+  --nav-height: 4.5rem;
+
+  /* ---- Shape ----------------------------------------------------------- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+  --border-width: 1px;
+
+  /* ---- Elevation (restrained: no glows) ------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 28px -12px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 28px 60px -24px rgba(0, 0, 0, 0.65);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 500ms;
+  --dur-reveal: 700ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Stacking -------------------------------------------------------- */
+  --z-raised: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+
+  /* ---- Touch ----------------------------------------------------------- */
+  --tap-min: 2.75rem;  /* 44px minimum interactive target */
+
+  /* Breakpoints (reference only; CSS variables can't be used in @media):
+     sm 30em (480px) · md 48em (768px) · lg 64em (1024px) · xl 80em (1280px) · 2xl 100em (1600px) */
+
+  color-scheme: dark;
+}
+
+/* ---- Light surface theme: apply with class="theme-light" on a section ---- */
+.theme-light {
+  --color-bg: var(--white-50);
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+  --color-text: var(--navy-950);
+  --color-text-soft: #334155;
+  --color-text-muted: #556274;         /* derived: 5.7:1 on soft white */
+  --color-border: rgba(11, 17, 32, 0.12);
+  --color-border-strong: rgba(11, 17, 32, 0.28);
+  --color-accent: var(--blue-600);
+  --color-accent-hover: #1D4ED8;
+  --color-on-accent: #FFFFFF;
+  --color-link: var(--blue-600);
+  --color-focus: var(--blue-600);
+  --color-error: #B91C1C;
+  --color-success: #15803D;
+  --color-decor: var(--slate-500);
+  --shadow-md: 0 10px 28px -12px rgba(11, 17, 32, 0.18);
+  --shadow-lg: 0 28px 60px -24px rgba(11, 17, 32, 0.25);
+  color-scheme: light;
+  background: var(--color-bg);
+  color: var(--color-text);
+}

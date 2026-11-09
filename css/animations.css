@@ -1,0 +1,127 @@
+/* ==========================================================================
+   animations.css — Motion layer (works with js/animations.js)
+   --------------------------------------------------------------------------
+   Rules this file follows:
+   - Only transform and opacity are animated (smooth, cheap on phones).
+   - Hidden-until-revealed states exist ONLY under html.js-anim, a class that
+     is added when JavaScript runs AND the visitor has not asked for reduced
+     motion. Without it, everything is simply visible.
+   - Continuous motion is limited to a slow background drift, the scroll cue,
+     and the skills marquee (which pauses on hover/focus).
+   ========================================================================== */
+
+/* ---------- 1. Scroll reveal ------------------------------------------- */
+.js-anim [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.js-anim [data-reveal="left"]  { transform: translate3d(-36px, 0, 0); }
+.js-anim [data-reveal="right"] { transform: translate3d(36px, 0, 0); }
+.js-anim [data-reveal="scale"] { transform: scale(0.96); }
+.js-anim [data-reveal="fade"]  { transform: none; }
+.js-anim [data-reveal].is-visible { opacity: 1; transform: none; }
+/* animations.js removes data-reveal once an element has appeared, so normal
+   hover transitions on cards and buttons are not slowed by the reveal delay. */
+
+/* ---------- 2. Word-by-word heading reveal ------------------------------ */
+.js-anim [data-split] .word {
+  display: inline-block; overflow: hidden; vertical-align: top;
+  padding-bottom: 0.14em; margin-bottom: -0.14em;       /* room for descenders inside the mask */
+}
+.js-anim [data-split] .word__inner {
+  display: inline-block; transform: translate3d(0, 112%, 0);
+  transition: transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--base, 0ms) + var(--i, 0) * 70ms);
+}
+.js-anim [data-split].is-visible .word__inner { transform: none; }
+
+/* ---------- 3. Page load and page change -------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  body { animation: page-in 0.5s var(--ease-out) both; }
+  .site-header { animation: header-in 0.7s var(--ease-out) both; }
+  body.is-leaving { opacity: 0; transition: opacity 0.22s ease-in; }
+}
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes header-in { from { opacity: 0; transform: translate3d(0, -14px, 0); } to { opacity: 1; transform: none; } }
+
+/* ---------- 4. Scroll progress bar -------------------------------------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; z-index: calc(var(--z-nav) + 1);
+  height: 2px; background: var(--color-accent);
+  transform-origin: 0 50%; transform: scaleX(var(--p, 0)); pointer-events: none;
+}
+
+/* ---------- 5. Hero motion ---------------------------------------------- */
+.hero__bg::before { transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 8px), 0); }
+.hero__outline    { transform: translate3d(calc(var(--px, 0) * -12px), calc(var(--py, 0) * -10px), 0); }
+.hero__frame      { transform: translate3d(calc(var(--px, 0) * 4px), calc(var(--py, 0) * 3px), 0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__bg::after { animation: drift 18s ease-in-out infinite; }
+  .hero__scroll-line::after { animation: scroll-cue 2.4s var(--ease-in-out) infinite; }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(-3%, 4%, 0) scale(1.1); }
+}
+@keyframes scroll-cue {
+  0%   { transform: translateY(-110%); }
+  60%  { transform: translateY(260%); }
+  100% { transform: translateY(260%); }
+}
+
+/* ---------- 6. Skills marquee ------------------------------------------- */
+.marquee {
+  overflow: hidden; padding-block: var(--space-5);
+  border-block: var(--border-width) solid var(--color-border);
+  background: var(--color-bg);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track { display: flex; width: max-content; }
+.marquee__list { display: flex; flex: none; align-items: center; margin: 0; padding: 0; list-style: none; }
+.marquee__list li {
+  display: flex; align-items: center; white-space: nowrap;
+  font-family: var(--font-display); font-weight: var(--weight-bold); font-size: var(--text-xl);
+  letter-spacing: var(--tracking-heading); color: var(--color-text-muted);
+}
+.marquee__list li::after {
+  content: ""; width: 0.4rem; height: 0.4rem; margin-inline: var(--space-6);
+  border-radius: 50%; background: var(--color-accent); flex: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee__track { animation: marquee 42s linear infinite; }
+  .marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
+}
+@keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
+/* Reduced motion: a still, wrapped list instead of a moving strip */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+  .marquee__track { width: auto; padding-inline: var(--gutter); }
+  .marquee__list { flex-wrap: wrap; row-gap: var(--space-3); }
+  .marquee__list[aria-hidden="true"] { display: none; }
+}
+
+/* ---------- 7. Card spotlight (soft highlight that follows the pointer) -- */
+.has-spotlight { position: relative; }
+.has-spotlight::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(96, 165, 250, 0.10), transparent 62%);
+  opacity: 0; transition: opacity var(--dur-base) var(--ease-out);
+}
+.has-spotlight:hover::after { opacity: 1; }
+.theme-light .has-spotlight::after { background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(37, 99, 235, 0.08), transparent 62%); }
+
+/* ---------- 8. Small touches -------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .timeline::before { transform-origin: 0 0; animation: line-grow 1.2s var(--ease-out) both; }
+  .education__dot { animation: dot-pulse 2.6s ease-out infinite; }
+}
+@keyframes line-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes dot-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}

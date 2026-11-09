@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1120">
+  <title>Khen Rod S. Canlas · Aspiring Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Khen Rod S. Canlas, a Computer Science student and aspiring Front-End Developer.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("js-anim");setTimeout(function(){if(!window.__animReady)document.documentElement.classList.remove("js-anim")},4000)}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="js/contact.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/data/skills.js" defer></script>
+  <script src="js/data/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body id="top" data-page="home" data-root="">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="site-header">
+    <noscript><nav class="noscript-nav" aria-label="Primary"><a href="index.html">Home</a><a href="pages/about.html">About</a><a href="index.html#expertise">Expertise</a><a href="pages/projects.html">Projects</a><a href="index.html#creative-works">Creative Works</a><a href="pages/contact.html">Contact</a></nav></noscript>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="container container--wide hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Aspiring Full Stack Developer</p>
+
+          <h1 class="display hero__title" id="hero-title">
+            Building Digital Experiences <span class="text-accent">That&nbsp;Matter.</span>
+          </h1>
+
+          <p class="lead hero__lede">
+            A Computer Science student and aspiring Full Stack Developer passionate about building meaningful digital experiences through technology and design. Driven by curiosity, creativity, and a commitment to continuous growth, I strive to go beyond the ordinary, challenge limitations, and think without boundaries. I believe in pushing beyond what's expected, embracing every opportunity to learn, and turning ambitious ideas into impactful solutions. Never settling for average, because the possibilities of what I can create are limitless.
+          </p>
+
+          <div class="cluster hero__actions">
+            <a class="btn btn--primary btn--lg" href="#projects">
+              View My Projects
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--secondary btn--lg" href="#contact">Contact Me</a>
+          </div>
+
+          <dl class="hero__facts">
+            <div><dt class="stat-label">Studying</dt><dd>BS Computer Science</dd></div>
+            <div><dt class="stat-label">School</dt><dd>Holy Cross College</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero__visual">
+          <span class="hero__outline" aria-hidden="true"></span>
+          <div class="hero__frame">
+            <!-- PROFILE PHOTO: assets/images/profile.png. To change it, overwrite that file (portrait works best) and update the alt text if you like. -->
+            <img src="assets/images/profile.png" width="941" height="1672" alt="Portrait of Khen Rod S. Canlas" fetchpriority="high" decoding="async">
+            <figcaption class="hero__badge">
+              <span class="stat-label">Focus</span>
+              <span>Front-End · UI/UX · Graphic design</span>
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+
+      <div class="container container--wide hero__scroll-wrap">
+        <a class="hero__scroll" href="#about" aria-label="Scroll to the About section">
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+          <span class="stat-label">Scroll</span>
+        </a>
+      </div>
+    </section>
+    <!-- Skills strip: rendered from js/data/skills.js by js/main.js -->
+    <div class="marquee" role="group" aria-label="Technologies and disciplines I work with" data-marquee></div>
+
+    <section class="section section--bordered about" id="about" aria-labelledby="about-title">
+      <div class="container container--wide">
+        <div class="about__grid">
+
+          <div class="about__story">
+            <span class="eyebrow">About</span>
+            <h2 id="about-title">Where technology meets design.</h2>
+            <p class="lead about__lead">I'm a Computer Science student who enjoys the point where technology and design meet.</p>
+            <p class="text-soft">I'm studying at Holy Cross College and working toward a career as a Front-End Developer. What draws me to the front end is that it's where logic turns into something people can see, touch and use.</p>
+            <p class="text-soft">Outside of code, I'm interested in UI/UX, graphic design and basic video editing. Together they shape how I think about how a page looks, how it feels to use, and how clearly it communicates.</p>
+            <p class="text-soft">I've applied these skills to web-based systems such as SCMOVS and LLMS, which you can find in the <a href="#projects">projects section</a>.</p>
+            <a class="link-arrow" href="pages/about.html">More about me
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="bento about__cards">
+            <article class="card card--interactive span-6">
+              <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+              <h3 class="card__title">Computer Science</h3>
+              <p class="card__body">I'm pursuing a Bachelor of Science in Computer Science at Holy Cross College, building the technical foundation to understand how software works beneath the interface.</p>
+            </article>
+            <article class="card card--interactive span-3">
+              <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+              <h3 class="card__title">Web development</h3>
+              <p class="card__body">I enjoy building websites and clean interfaces with HTML5, CSS3, JavaScript and Tailwind CSS, and I use Python, Flask and MySQL when a project needs a back end.</p>
+            </article>
+            <article class="card card--interactive span-3">
+              <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></span>
+              <h3 class="card__title">Design and creative work</h3>
+              <p class="card__body">Interface design, graphic design and basic video editing shape how I approach layout, hierarchy and visual detail.</p>
+            </article>
+            <article class="card card--interactive span-6">
+              <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></svg></span>
+              <h3 class="card__title">Problem solving and continuous learning</h3>
+              <p class="card__body">I like breaking a problem into smaller parts, trying an approach and refining it. I treat each project as a chance to learn something new.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="about__interests">
+          <h3 class="stat-label">Main interests</h3>
+          <ul class="tag-list" role="list">
+            <li class="tag">Front-End Web Development</li>
+            <li class="tag">Website Design and Development</li>
+            <li class="tag">UI/UX Design</li>
+            <li class="tag">Graphic Design</li>
+            <li class="tag">Basic Video Editing</li>
+            <li class="tag">Technology and Creative Digital Experiences</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section section--bordered" id="expertise" aria-labelledby="expertise-title">
+      <div class="container container--wide">
+        <div class="section__head">
+          <span class="eyebrow">Expertise</span>
+          <h2 id="expertise-title">The tools I build with.</h2>
+          <p class="text-muted">Technologies and disciplines I use to design interfaces and build web systems.</p>
+        </div>
+
+        <!-- Rendered from js/data/skills.js by js/main.js -->
+        <div class="bento skills" data-skills>
+          <noscript>
+            <p class="text-soft"><strong>Front-End Development:</strong> HTML5, CSS3, JavaScript, Tailwind CSS. <strong>Back-End and Database:</strong> Python, Flask, MySQL. <strong>Design and Creative:</strong> UI Design, Graphic Design, Basic Video Editing.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt section--bordered" id="projects" aria-labelledby="projects-title">
+      <div class="container container--wide">
+        <div class="section__head">
+          <span class="eyebrow">Featured projects</span>
+          <h2 id="projects-title">Systems I've built.</h2>
+          <p class="text-muted">Two web-based systems built with Python, Flask and MySQL.</p>
+        </div>
+
+        <!-- Rendered from js/data/projects.js by js/main.js -->
+        <div class="projects" data-projects>
+          <noscript>
+            <p class="text-soft"><strong>SCMOVS</strong> (Student Council Management and Online Voting System) and <strong>LLMS</strong> (Laundry Lounge Management System), both built with Python, Flask, MySQL, HTML, CSS, JavaScript and Tailwind CSS. <a href="pages/projects.html">See project details</a>.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+    <section class="section section--bordered" id="creative-works" aria-labelledby="creative-title">
+      <div class="container container--wide">
+        <div class="section__head">
+          <span class="eyebrow">Creative works</span>
+          <h2 id="creative-title">Beyond the code.</h2>
+          <p class="text-muted">Graphic design and video editing alongside my development work.</p>
+        </div>
+
+        <!-- Rendered from js/data/projects.js (window.PORTFOLIO_DATA.creative) by js/main.js -->
+        <div class="bento creative" data-creative>
+          <noscript>
+            <p class="text-soft">Graphic design: <a href="assets/documents/shark-x-poster.pdf">Shark X poster (PDF)</a>. Video editing: <a href="https://youtu.be/njjmYIYRZmg">The Last Patriot trailer on YouTube</a>.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt section--bordered" id="education" aria-labelledby="education-title">
+      <div class="container container--wide">
+        <div class="education">
+          <div class="education__intro">
+            <span class="eyebrow">Education</span>
+            <h2 id="education-title">Education and background.</h2>
+            <p class="text-muted">The academic foundation behind my work as an aspiring Full Stack Developer.</p>
+          </div>
+
+          <!-- To edit: change the text below. Add dates here only when you want them shown. -->
+          <ol class="timeline" role="list">
+            <li class="timeline__item">
+              <span class="timeline__when stat-label">Now</span>
+              <article class="card card--raised education__card" aria-labelledby="education-degree">
+                <span class="tag tag--accent education__status"><span class="education__dot" aria-hidden="true"></span>Current student</span>
+                <h3 class="card__title" id="education-degree">Bachelor of Science in Computer Science</h3>
+                <p class="education__school">Holy Cross College</p>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt section--bordered" id="contact" aria-labelledby="contact-title">
+      <div class="container container--wide">
+        <div class="contact">
+          <div class="contact__intro">
+            <span class="eyebrow">Contact</span>
+            <h2 id="contact-title">Let's build something together.</h2>
+            <p class="lead">Whether it's a project, an opportunity or just a hello, I'd be glad to hear from you.</p>
+
+            <!-- Rendered from js/contact.js (edit your details there) -->
+            <ul class="contact-links" role="list" aria-label="Ways to reach me" data-contact-links></ul>
+            <noscript>
+              <p class="text-soft">Email: <a href="mailto:khenrodc@gmail.com">khenrodc@gmail.com</a>. <a href="https://github.com/khenrodc-coder">GitHub</a>, <a href="https://www.facebook.com/khentarohohoho">Facebook</a>, <a href="https://www.instagram.com/khentaroo_/">Instagram</a>.</p>
+            </noscript>
+          </div>
+
+          <form class="contact-form card card--raised" data-contact-form novalidate
+                action="mailto:khenrodc@gmail.com" method="post" enctype="text/plain" aria-labelledby="form-title">
+            <h3 class="card__title" id="form-title">Send a message</h3>
+
+            <div class="field">
+              <label class="field__label" for="cf-name">Name</label>
+              <input class="field__control" id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-error">
+              <span class="field__error" id="cf-name-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-email">Email</label>
+              <input class="field__control" id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="cf-email-error">
+              <span class="field__error" id="cf-email-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-subject">Subject</label>
+              <input class="field__control" id="cf-subject" name="subject" type="text" autocomplete="off" required aria-describedby="cf-subject-error">
+              <span class="field__error" id="cf-subject-error"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="cf-message">Message</label>
+              <textarea class="field__control" id="cf-message" name="message" rows="6" maxlength="1000" required aria-describedby="cf-message-hint cf-message-error"></textarea>
+              <span class="field__hint" id="cf-message-hint">Up to 1,000 characters.</span>
+              <span class="field__error" id="cf-message-error"></span>
+            </div>
+
+            <!-- Spam trap for when a form service is connected: real visitors never see this -->
+            <div class="hp" aria-hidden="true">
+              <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+
+            <div class="contact-form__actions">
+              <button class="btn btn--primary btn--lg" type="submit">
+                Send message
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+              <p class="field__hint" data-mode-note>This form opens your email app with your message ready to send. The website itself does not deliver messages.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
