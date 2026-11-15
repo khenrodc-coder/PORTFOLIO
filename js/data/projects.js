@@ -116,6 +116,43 @@ window.PORTFOLIO_DATA.projects = [
     liveUrl: "https://github.com/khenrodc-coder/LLMS",   // no live site yet, so this points to the GitHub repository
     liveLabel: "View Repository",
     detailsUrl: "pages/projects.html#llms"
+  },
+  {
+    id: "kherotive-visual-experiments",
+    name: "KHEROTIVE",
+    fullName: "Kherotive Visual Experiments",
+    type: "Creative development",
+    description:
+      "A collection of six interactive 3D visual experiments exploring particle systems, procedural graphics, motion, orbital mechanics and real-time visual effects in the browser.",
+    problem:
+      "Explores how code can create interactive, immersive and visually engaging digital experiences beyond traditional web applications.",
+    features: [
+      "Particle Flow: interactive 3D particle simulation",
+      "Mouse 3D Environment: cursor-responsive energy cube",
+      "Fractal Explorer: interactive 3D Mandelbulb",
+      "Kinetic Typography: cursor-responsive extruded 3D text",
+      "Orbital Mechanics: 3D solar system with gravity and orbit trails",
+      "Harmonic Ribbons: generative 3D light ribbons"
+    ],
+    objectives: [
+      "Explore creative coding and interactive 3D graphics",
+      "Experiment with procedural visuals and real-time animation",
+      "Build browser-based experiences that respond to user interaction"
+    ],
+    highlights: [
+      "Six experiments accessible from one visual dashboard",
+      "Interactive experiment viewer with fullscreen support",
+      "Search and category filters for navigating experiments",
+      "Local Three.js modules and shared experiment assets"
+    ],
+    technologies: ["HTML5", "CSS3", "JavaScript", "Three.js", "WebGL", "GLSL"],
+    thumbnail: "assets/projects/visual-experiments/thumbnail.png",
+    thumbnailAlt: "Kherotive Visual Experiments artwork with glowing orbital rings and particles",
+    thumbnailCaption: "Kherotive visual experiments dashboard",
+    screenshots: [],
+    liveUrl: "https://kherotives.vercel.app/",
+    liveLabel: "Explore Experiments",
+    detailsUrl: "pages/projects.html#kherotive-visual-experiments"
   }
 ];
 
@@ -157,11 +194,15 @@ window.PORTFOLIO_DATA.creative = [
   },
   {
     id: "visual-experiments",
-    kind: "placeholder",
-    category: "Visual experiments",
-    title: "Visual experiments",
-    description: "Placeholder. Add UI studies, layout experiments or motion sketches here.",
-    label: "Visual experiments"
+    kind: "image",
+    category: "Creative development",
+    title: "Kherotive Visual Experiments",
+    description: "Six interactive 3D experiments built with Three.js, from particle flow and fractals to orbital mechanics and generative light ribbons.",
+    note: "Explore the interactive dashboard and launch any experiment.",
+    image: "assets/projects/visual-experiments/thumbnail.png",
+    imageAlt: "Kherotive Visual Experiments visual identity and glowing 3D orbital artwork",
+    href: "https://kherotives.vercel.app/",
+    linkLabel: "Explore the experiments"
   },
   {
     id: "other-creative",
