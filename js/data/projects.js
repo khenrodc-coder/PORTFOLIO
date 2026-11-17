@@ -64,7 +64,7 @@ window.PORTFOLIO_DATA.projects = [
         bg: "linear-gradient(#fefefe, #172554)"
       }
     ],
-    liveUrl: "https://scmovs.up.railway.app/",
+    liveUrl: "https://scmovs-2m1oil5fx-khenrodc-7073s-projects.vercel.app/",
     detailsUrl: "pages/projects.html#scmovs"
   },
   {
